@@ -50,6 +50,7 @@ eureka:
 #        ipAddress: 127.0.0.1
 #        port: 8500
 
-logging:
-  level:
-    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN
+# 关闭心跳log
+#logging:
+#  level:
+#    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: WARN
