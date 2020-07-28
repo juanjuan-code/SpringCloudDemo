@@ -9,6 +9,6 @@ server:
 eureka:
   client:
     # 不让 eureka server 注册到自己的注册中心
-    register-with-eureka: false
+#    register-with-eureka: false
     serviceUrl:
       defaultZone: http://127.0.0.1:${server.port}/eureka

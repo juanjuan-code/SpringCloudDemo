@@ -8,9 +8,9 @@
 
 
 ## 默认 profile 关闭自动特性
-eureka:
-  client:
-    enabled: false # Eureka 服务发现与注册失效（默认）
+#eureka:
+#  client:
+#    enabled: true # Eureka 服务发现与注册失效（默认）
 
 --- # Profile For Eureka
 spring:
@@ -28,7 +28,7 @@ eureka:
   instance:
     instanceId: ${spring.application.name}:${server.port}
 
---- # Profile For Zookeeper
+#--- # Profile For Zookeeper
 #spring:
 #  profiles: zookeeper
 #  cloud:
@@ -36,7 +36,7 @@ eureka:
 #      enabled: true
 #      connectString: 127.0.0.1:2181
 
---- # Profile For Consul
+#--- # Profile For Consul
 #spring:
 #  profiles: consul
 #  cloud:
