@@ -1,5 +1,8 @@
 package configuration;
 
+/**
+ * @author yuhui.guan
+ */
 public class GenericConfiguration {
 
     public static void main(String[] args) {

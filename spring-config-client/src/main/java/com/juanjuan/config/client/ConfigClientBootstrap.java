@@ -16,9 +16,10 @@ import java.util.Set;
 
 /**
  * @author yuhui.guan
+ * EnableDiscoveryClient = 激活服务发现客户端
  */
 @EnableAutoConfiguration
-@EnableDiscoveryClient // 激活服务发现客户端
+@EnableDiscoveryClient
 @RestController
 public class ConfigClientBootstrap {
     public static void main(String[] args) {
