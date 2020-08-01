@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Random;
 import java.util.concurrent.*;
 
+/**
+ * @author yuhui.guan
+ */
 @RestController
 public class EchoServiceController {
 
@@ -29,7 +32,10 @@ public class EchoServiceController {
 
 //    private ExecutorService executorService = Executors.newFixedThreadPool(2);
 
-    @Limited(10)           // 限流
+    /**
+     * 限流  @Limited(10)
+     */
+    @Limited(10)
     @GetMapping("/world")
     public String world() {
         await();

@@ -1,7 +1,7 @@
 package com.juanjuan.service.config;
 
-import com.gupaoedu.service.annotation.Limited;
-import com.gupaoedu.service.annotation.Timeout;
+import com.juanjuan.service.annotation.Limited;
+import com.juanjuan.service.annotation.Timeout;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -18,6 +18,9 @@ import java.util.Map;
 import java.util.concurrent.*;
 import java.util.stream.Stream;
 
+/**
+ * @author yuhui.guan
+ */
 @Aspect
 @Configuration
 public class AopConfiguration {

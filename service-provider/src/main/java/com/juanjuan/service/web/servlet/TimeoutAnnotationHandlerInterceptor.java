@@ -1,6 +1,6 @@
 package com.juanjuan.service.web.servlet;
 
-import com.gupaoedu.service.annotation.Timeout;
+import com.juanjuan.service.annotation.Timeout;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 /**
  * {@link Timeout @Timeout} 注解处理 Web MVC 拦截器
  *
+ * @author yuhui.guan
  * @see HandlerInterceptor
  * @see Timeout
  */
@@ -22,6 +23,7 @@ public class TimeoutAnnotationHandlerInterceptor implements HandlerInterceptor {
     private ExecutorService executorService = Executors.newFixedThreadPool(2);
 
 
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 1. 拦截处理方法（Spring Web MVC 内建 HandlerInterceptor）
         // 2. 得到被拦截的方法对象（handler 对象在 Spring Web MVC 注解编程中永远是 HandlerMethod）

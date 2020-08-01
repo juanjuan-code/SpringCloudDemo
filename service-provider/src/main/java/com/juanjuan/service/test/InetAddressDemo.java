@@ -4,6 +4,9 @@ import java.net.InetAddress;
 import java.util.Random;
 import java.util.stream.Stream;
 
+/**
+ * @author yuhui.guan
+ */
 public class InetAddressDemo {
 
     public static void main(String[] args) throws Exception {
@@ -17,7 +20,8 @@ public class InetAddressDemo {
 
         int size = 2;
         // 随机
-        random.nextInt(size+1); // [1,2]
+        // [1,2]
+        random.nextInt(size + 1);
         // 轮训（环状） Ring
 
         // 1,2-> 1
