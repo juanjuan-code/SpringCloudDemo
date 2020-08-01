@@ -3,12 +3,10 @@ spring:
     name: eureka-server
 
 server:
-  port: 8761
+  port: 12345
 
 # Eureka 客户端配置
 eureka:
   client:
-    # 不让 eureka server 注册到自己的注册中心
-#    register-with-eureka: false
     serviceUrl:
       defaultZone: http://127.0.0.1:${server.port}/eureka

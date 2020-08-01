@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 // Spring Boot application.properties
-/**
- * @author yuhui.guan
- */
 public class PropertiesDemo {
 
     public static void main(String[] args) throws IOException {

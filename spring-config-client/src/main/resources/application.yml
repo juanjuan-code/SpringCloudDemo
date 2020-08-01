@@ -11,10 +11,10 @@
 server:
   port: 0 #随机端口
 
-## 默认 profile 关闭自动特性
-#eureka:
-#  client:
-#    enabled: false # Eureka 服务发现与注册失效（默认）
+# 默认 profile 关闭自动特性
+eureka:
+  client:
+    enabled: false # Eureka 服务发现与注册失效（默认）
 
 --- # Profile For Eureka
 spring:
