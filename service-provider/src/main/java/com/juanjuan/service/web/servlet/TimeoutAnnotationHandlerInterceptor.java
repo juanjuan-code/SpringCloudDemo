@@ -33,7 +33,8 @@ public class TimeoutAnnotationHandlerInterceptor implements HandlerInterceptor {
             Method method = handlerMethod.getMethod();
             // 3. 通过 Method 获取标注的 @Timeout 注解
             Timeout timeout = method.getAnnotation(Timeout.class);
-            if (timeout != null) { // 如果标注的话
+            if (timeout != null) {
+                // 如果标注的话
                 // 4. 获取 @Timeout 注解中的属性
                 Object bean = handlerMethod.getBean();
                 Long value = timeout.value();
@@ -49,10 +50,12 @@ public class TimeoutAnnotationHandlerInterceptor implements HandlerInterceptor {
                 Object returnValue = null;
                 try {
                     // 6. 执行被拦截的方法
-                    returnValue = future.get(value, timeUnit); // 正常处理
+                    // 正常处理
+                    returnValue = future.get(value, timeUnit);
                 } catch (TimeoutException e) {
                     // 7. 如果失败，调用 fallback 方法
-                    returnValue = invokeFallbackMethod(handlerMethod, bean, fallback);      // 补偿处理
+                    // 补偿处理
+                    returnValue = invokeFallbackMethod(handlerMethod, bean, fallback);
                 }
                 // 8. 返回执行结果（当前实现是存在缺陷的，大家可以尝试通过 HandlerMethodReturnValueHandler 实现）
                 response.getWriter().write(String.valueOf(returnValue));
@@ -74,8 +77,10 @@ public class TimeoutAnnotationHandlerInterceptor implements HandlerInterceptor {
         Class beanClass = bean.getClass();
         MethodParameter[] methodParameters = handlerMethod.getMethodParameters();
         Class[] parameterTypes = Stream.of(methodParameters)
-                .map(MethodParameter::getParameterType) // Class
-                .toArray(Class[]::new);                 // Stream<Class> -> Class[]
+                // Class
+                .map(MethodParameter::getParameterType)
+                .toArray(Class[]::new);
+        // Stream<Class> -> Class[]
         Method fallbackMethod = beanClass.getMethod(fallbackMethodName, parameterTypes);
         return fallbackMethod;
     }
