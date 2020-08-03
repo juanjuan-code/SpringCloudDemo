@@ -13,7 +13,7 @@ public class ExecutorsDemo {
      * 创建一个固定长度的线程池，每当提交一个任务就创建一个线程，直到达到线程池的最大数量，这时线程规模将不再变化，
      * 当线程发生未预期的错误而结束时，线程池会补充一个新的线程。
      */
-    ExecutorService executorService = Executors.newFixedThreadPool(0);
+    ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(0);
 
     /**
      * 创建一个可缓存的线程池，如果线程池的规模超过了处理需求，将自动回收空闲线程，而当需求增加时，则可以自动添加新线程，
