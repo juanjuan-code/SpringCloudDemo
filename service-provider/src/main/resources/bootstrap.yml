@@ -1,17 +1,17 @@
-#spring:
-#  cloud:
-#    zookeeper:
-#      enabled: false # Zookeeper 服务发现与注册失效（默认）
-#    consul:
-#      enabled: false # Consul 服务发现与注册失效（默认）
-
-server:
-  port: 0 #随机端口
-
 ## 默认 profile 关闭自动特性
 eureka:
   client:
     enabled: false # Eureka 服务发现与注册失效（默认）
+
+spring:
+  cloud:
+    zookeeper:
+      enabled: false # Zookeeper 服务发现与注册失效（默认）
+    consul:
+      enabled: false # Consul 服务发现与注册失效（默认）
+
+server:
+  port: 8080 #随机端口
 
 --- # Profile For Eureka
 spring:
@@ -28,6 +28,15 @@ eureka:
     registryFetchIntervalSeconds: 5 # 5 秒轮训一次
   instance:
     instanceId: ${spring.application.name}:${server.port}
+
+
+#spring:
+#  cloud:
+#    zookeeper:
+#      enabled: false # Zookeeper 服务发现与注册失效（默认）
+#    consul:
+#      enabled: false # Consul 服务发现与注册失效（默认）
+
 
 #--- # Profile For Zookeeper
 #spring:

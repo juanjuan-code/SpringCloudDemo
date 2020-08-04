@@ -15,6 +15,7 @@
         <module>eureka-server</module>
         <module>service-client</module>
         <module>service-provider</module>
+        <module>auth-server</module>
     </modules>
     <groupId>com.juanjuan</groupId>
     <artifactId>spring-cloud-all</artifactId>
@@ -93,17 +94,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-
-        <!-- feign使用okhttp-->
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-okhttp</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-openfeign-core</artifactId>
         </dependency>
     </dependencies>
 

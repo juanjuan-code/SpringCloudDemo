@@ -3,6 +3,12 @@ spring:
     name: service-provider
   autoconfigure:
     exclude: org.springframework.cloud.consul.serviceregistry.ConsulAutoServiceRegistrationAutoConfiguration
-
-feign.httpclient.enabled=false
-feign.okhttp.enabled=true
+  cloud:
+    gateway:
+      routes:
+        - id: rest
+          uri: http://127.0.0.1:8080/hello # 被代理的 URI
+          predicates:
+            - Path=/rest/hello
+          filters:
+            - StripPrefix=1

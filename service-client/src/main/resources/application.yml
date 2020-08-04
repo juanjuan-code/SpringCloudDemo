@@ -4,6 +4,21 @@ spring:
   autoconfigure:
     exclude: org.springframework.cloud.consul.serviceregistry.ConsulAutoServiceRegistrationAutoConfiguration
 
+  kafka:
+    producer:
+      valueSerializer: com.juanjuan.service.web.kafka.ObjectSerializer
+    consumer:
+      groupId: juanjuan-group
+      valueDeserializer: com.juanjuan.service.web.kafka.ObjectDeserializer
+
+  cloud:
+    stream:
+      bindings:
+        person-source:
+          destination: juanjuan
+        person-sink:
+          destination: juanjuan
+          group: juanjuan-group
 
 server:
   port: 9090 #随机端口
