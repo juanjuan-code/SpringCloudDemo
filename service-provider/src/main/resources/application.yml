@@ -3,3 +3,6 @@ spring:
     name: service-provider
   autoconfigure:
     exclude: org.springframework.cloud.consul.serviceregistry.ConsulAutoServiceRegistrationAutoConfiguration
+
+feign.httpclient.enabled=false
+feign.okhttp.enabled=true
