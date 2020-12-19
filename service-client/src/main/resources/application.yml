@@ -21,4 +21,21 @@ spring:
           group: juanjuan-group
 
 server:
-  port: 9090 #随机端口
+  port: 9030 #随机端口
+
+--- # Profile For Eureka
+#spring:
+#  profiles: eureka
+# Eureka 客户端配置
+eureka:
+  server: # 官方不存在的配置（自定义配置）
+    host: 127.0.0.1
+    port: 12345
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.server.host}:${eureka.server.port}/eureka
+    # 5 秒轮训一次 ->registryFetchIntervalSeconds指定的下一个注册表获取周期生效。获取过于频繁会导致GC问题
+    registryFetchIntervalSeconds: 5
+  instance:
+    instanceId: ${spring.application.name}:${server.port}

@@ -15,14 +15,18 @@ import java.util.concurrent.*;
 @RestController
 public class EchoServiceController {
 
-    // 外部化配置其实是有点不靠谱的 - 它并非完全静态，也不一定及时返回
-
+    /**
+     * 外部化配置其实是有点不靠谱的 - 它并非完全静态，也不一定及时返回
+     */
     private final Environment environment;
 
     public EchoServiceController(Environment environment) {
         this.environment = environment;
     }
 
+    /**
+     * 获取启动端口号
+     */
     private String getPort() {
         return environment.getProperty("local.server.port");
     }

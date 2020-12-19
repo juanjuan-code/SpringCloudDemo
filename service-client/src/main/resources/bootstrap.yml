@@ -1,16 +1,3 @@
-spring:
-  cloud:
-    zookeeper:
-      enabled: false # Zookeeper 服务发现与注册失效（默认）
-    consul:
-      enabled: false # Consul 服务发现与注册失效（默认）
-
-
-## 默认 profile 关闭自动特性
-eureka:
-  client:
-    enabled: false # Eureka 服务发现与注册失效（默认）
-
 --- # Profile For Eureka
 spring:
   profiles: eureka
@@ -27,20 +14,35 @@ eureka:
   instance:
     instanceId: ${spring.application.name}:${server.port}
 
+#spring:
+#  cloud:
+#    zookeeper:
+#      enabled: false # Zookeeper 服务发现与注册失效（默认）
+#    consul:
+#      enabled: false # Consul 服务发现与注册失效（默认）
+#
+#
+### 默认 profile 关闭自动特性
+#eureka:
+#  client:
+#    enabled: false # Eureka 服务发现与注册失效（默认）
+
+
+
 --- # Profile For Zookeeper
-spring:
-  profiles: zookeeper
-  cloud:
-    zookeeper:
-      enabled: true
-      connectString: 127.0.0.1:2181
+#spring:
+#  profiles: zookeeper
+#  cloud:
+#    zookeeper:
+#      enabled: true
+#      connectString: 127.0.0.1:2181
 
 --- # Profile For Consul
-spring:
-  profiles: consul
-  cloud:
-    consul:
-      discovery:
-        enabled: true
-        ipAddress: 127.0.0.1
-        port: 8500
+#spring:
+#  profiles: consul
+#  cloud:
+#    consul:
+#      discovery:
+#        enabled: true
+#        ipAddress: 127.0.0.1
+#        port: 8500

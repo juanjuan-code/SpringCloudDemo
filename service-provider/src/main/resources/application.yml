@@ -3,12 +3,30 @@ spring:
     name: service-provider
   autoconfigure:
     exclude: org.springframework.cloud.consul.serviceregistry.ConsulAutoServiceRegistrationAutoConfiguration
-  cloud:
-    gateway:
-      routes:
-        - id: rest
-          uri: http://127.0.0.1:8080/hello # 被代理的 URI
-          predicates:
-            - Path=/rest/hello
-          filters:
-            - StripPrefix=1
+server:
+  port: 9020
+
+--- # Profile For Eureka
+eureka:
+  server: # 官方不存在的配置（自定义配置）
+    host: 127.0.0.1
+    port: 12345
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.server.host}:${eureka.server.port}/eureka
+    # 5 秒轮训一次 ->registryFetchIntervalSeconds指定的下一个注册表获取周期生效。获取过于频繁会导致GC问题
+    registryFetchIntervalSeconds: 5
+  instance:
+    instanceId: ${spring.application.name}:${server.port}
+
+
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: rest
+#          uri: http://127.0.0.1:8080/hello # 被代理的 URI
+#          predicates:
+#            - Path=/rest/hello
+#          filters:
+#            - StripPrefix=1
