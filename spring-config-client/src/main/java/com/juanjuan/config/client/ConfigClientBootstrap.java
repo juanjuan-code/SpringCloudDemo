@@ -35,10 +35,7 @@ public class ConfigClientBootstrap {
     }
 
     /**
-     * @param serviceName
-     * @return
-     * @PathParam 属于 JAX-RS 标准 Java REST 注解
-     * @PathVariable 属于 Spring Web MVC
+     * @PathParam 和@PathVariable 的区别   @PathParam 属于 JAX-RS 标准 Java REST 注解，@PathVariable 属于 Spring Web MVC
      */
     @GetMapping("/services/{serviceName}")
     public List<ServiceInstance> getServiceInstances(@PathVariable String serviceName) {
